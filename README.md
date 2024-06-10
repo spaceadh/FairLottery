@@ -22,6 +22,7 @@ NB: I chose Hashmap, due to its ability to deal with
 ## Edge Cases Considered and Handled
 1. Invalid Input for Prize Values:
 - If a non-integer value is entered for prize values, the program gracefully exits with an error message.
+- If an Integer (i.e 0-9) is detected within the winners values, the program gracefully exits with an error. I.e J9y will be refused.Joy will be accepted.
 
 2. Unequal Number of Winners and Prizes:
 - The program allows for an unequal number of winners and prizes. If the number of winners is less than the number of prizes, all prizes are allocated to winners sequentially until all prizes are allocated.

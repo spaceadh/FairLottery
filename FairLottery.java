@@ -19,16 +19,33 @@ public class FairLottery {
         
         System.out.println("Now, please enter the names of the winners separated by commas:");
         String[] winners = scanner.nextLine().split(",");
+
+        // Validate winner names
+        if (!validateWinnerNames(winners)) {
+            System.out.println("Invalid winner names. Winner names should not contain numbers.");
+            return; // Exit the program gracefully
+        }
         
         Map<String, List<Integer>> allocation = allocatePrizes(prizes, winners);
         
         System.out.println("Fair distribution of prizes:");
-        // Print the allocation
-        for (String winner : winners) {
+        // Print the allocation with correct index numbering
+        for (int index = 1; index <= winners.length; index++) {
+            String winner = winners[index - 1];
             List<Integer> allocatedPrizes = allocation.get(winner);
-            System.out.println(winner + ":" + String.join(",", 
-                                 allocatedPrizes.stream().map(String::valueOf).toArray(String[]::new)));
+            System.out.println(index + ". " + winner + ":" + String.join(",", 
+                                allocatedPrizes.stream().map(String::valueOf).toArray(String[]::new)));
         }
+    }
+
+
+    private static boolean validateWinnerNames(String[] winners) {
+        for (String winner : winners) {
+            if (winner.matches(".*\\d.*")) { // Check for digits in the name
+                return false;
+            }
+        }
+        return true;
     }
     
     private static Map<String, List<Integer>> allocatePrizes(int[] prizes, String[] winners) {
