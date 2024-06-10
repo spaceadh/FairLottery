@@ -75,6 +75,7 @@ public class FairLottery {
         // }
 
         // LILO is not suitable as there is a large variation, between the prizes awarded to each, while LIFO has a much smaller one 
+        // Also, incase of excess winners, LILO, Will not handle such an edge case
         return allocation;
     }
 
