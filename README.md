@@ -1,4 +1,4 @@
-## Unfair Lottery - README
+## THE FAIR LOTTERY - THE README VERSION
 
 The purpose of this task is to evaluate whether the 'testee' will be able to develop a Java written Algorithm to do the following : 
 
@@ -63,15 +63,37 @@ Victor Alvin,Wachira,Purity,Waweru,James,Grace Ndanu,Joy Jerobon,Stephanie
 The example output will be as follows : 
 ```
 Fair distribution of prizes:
-Victor Alvin:1000
-Wachira:900
-Purity:200,300
-Waweru:800
-James:700
-Grace Ndanu:600
-Joy Jerobon:500
-Stephanie:400,100
+1. Victor Alvin:1000
+2. Wachira:900
+3. Purity:200,300
+4. Waweru:800
+5. James:700
+6. Grace Ndanu:600
+7. Joy Jerobon:500
+8. Stephanie:400,100
 ```
+
+## Tests Conducted
+1. testValidInput: This test checks if the program produces the correct output when valid input (integer prize values and non-empty winner names) is provided.
+
+2. testInvalidInput: This test checks if the program handles invalid input (non-integer prize values) by displaying an appropriate error message.
+
+3. testAllocationOfPrizes: This test checks if the prizes are allocated fairly among the winners according to the logic implemented in the FairLottery class.
+
+4. testEdgeCaseNoWinners: This test checks if the program handles the edge case where no winners are provided by displaying an appropriate message.
+
+5. testEdgeCaseNoPrizes: This test checks if the program handles the edge case where no prizes are provided by displaying an appropriate message.
+
+Compiling Command
+```
+javac -cp .:testLib/junit-platform-console-standalone-1.3.1.jar FairLotteryTest.java
+```
+
+Running Command
+```
+java -jar testLib/junit-platform-console-standalone-1.3.1.jar --class-path . --scan-class-path
+```
+
 
 NB. Environments currently on :
 1. Ubuntu 22.04
