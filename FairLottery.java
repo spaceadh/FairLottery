@@ -27,6 +27,12 @@ public class FairLottery {
             return; // Exit the program gracefully
         }
 
+        // Check if the number of winners exceeds the number of prizes
+        if (winners.length > prizes.length) {
+            System.out.println("Error: Number of winners cannot exceed the number of prizes.");
+            return; // Exit the program gracefully
+        }
+
         allocation = allocatePrizes(prizes, winners);
 
         System.out.println("Fair distribution of prizes:");
@@ -38,6 +44,7 @@ public class FairLottery {
                     allocatedPrizes.stream().map(String::valueOf).toArray(String[]::new)));
         }
     }
+
 
     private static boolean validateWinnerNames(String[] winners) {
         for (String winner : winners) {
