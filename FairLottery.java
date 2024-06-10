@@ -27,11 +27,14 @@ public class FairLottery {
             return; // Exit the program gracefully
         }
 
-        // Check if the number of winners exceeds the number of prizes
-        if (winners.length > prizes.length) {
-            System.out.println("Error: Number of winners cannot exceed the number of prizes.");
-            return; // Exit the program gracefully
-        }
+        // // Check if the number of winners exceeds the number of prizes
+
+        // if (winners.length > prizes.length) {
+        //     System.out.println("Error: Number of winners cannot exceed the number of prizes.");
+        //     return; // Exit the program gracefully
+        // }
+
+        //On second thought, the above is redudant, as they can be ignored.
 
         allocation = allocatePrizes(prizes, winners);
 
