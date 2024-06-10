@@ -62,6 +62,8 @@ public class FairLottery {
             allocation.put(winner, new ArrayList<>());
         }
 
+        // Sort prizes in descending order for fair distribution
+        Arrays.sort(prizes);
         int n = winners.length;
         int[] totalValues = new int[n];
 

@@ -53,7 +53,7 @@ java FairLottery
 ```
 6. Enter Prizes. The code allows only Int values, if you try to enter a string value, it will alert the user and exit the program grcefully. Example prizes include
 ```copy
-100,300,400,500,600,700,800,200,900,1000
+100,200,300,400,320,120,40,50,60,100,120,800,400,600,9000,2000,1000,1005,1200
 ``` 
 7. Enter Winner names: The name separation is done when a comma is detected. Example values include: 
 ```copy
