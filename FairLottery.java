@@ -61,18 +61,20 @@ public class FairLottery {
         // Distribute the prizes in a way to minimize the range of total values
         
         //LIFO APPROACH i.e This means that the last winner to receive a prize is the one with the least cumulative prize value so far. 
-        // for (int i = prizes.length - 1; i >= 0; i--) {
+        for (int i = prizes.length - 1; i >= 0; i--) {
+            int minIndex = findMinIndex(totalValues);
+            allocation.get(winners[minIndex]).add(prizes[i]);
+            totalValues[minIndex] += prizes[i];
+        }
+
+        //LILO APPROACH i.e where the first winner to receive a prize is the one with the least cumulative prize value
+        // for (int i = 0; i < prizes.length; i++) { // Change loop direction to start from 0
         //     int minIndex = findMinIndex(totalValues);
         //     allocation.get(winners[minIndex]).add(prizes[i]);
         //     totalValues[minIndex] += prizes[i];
         // }
 
-        //LILO APPROACH i.e where the first winner to receive a prize is the one with the least cumulative prize value
-        for (int i = 0; i < prizes.length; i++) { // Change loop direction to start from 0
-            int minIndex = findMinIndex(totalValues);
-            allocation.get(winners[minIndex]).add(prizes[i]);
-            totalValues[minIndex] += prizes[i];
-        }
+        // LILO is not suitable as there is a large variation, between the prizes awarded to each, while LIFO has a much smaller one 
         return allocation;
     }
 
