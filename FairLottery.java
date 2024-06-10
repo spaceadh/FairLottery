@@ -35,13 +35,15 @@ public class FairLottery {
 
         allocation = allocatePrizes(prizes, winners);
 
+        
         System.out.println("Fair distribution of prizes:");
         // Print the allocation with correct index numbering
         for (int index = 1; index <= winners.length; index++) {
             String winner = winners[index - 1];
             List<Integer> allocatedPrizes = allocation.get(winner);
-            System.out.println(index + ". " + winner + ":" + String.join(",",
-                    allocatedPrizes.stream().map(String::valueOf).toArray(String[]::new)));
+            int totalValue = allocatedPrizes.stream().mapToInt(Integer::intValue).sum();
+            System.out.println(index + ". " + winner + ": " + String.join(",",
+                    allocatedPrizes.stream().map(String::valueOf).toArray(String[]::new)) + " (Total: " + totalValue + ")");
         }
     }
 

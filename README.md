@@ -63,14 +63,14 @@ Victor Alvin,Wachira,Purity,Waweru,James,Grace Ndanu,Joy Jerobon,Stephanie
 The example output will be as follows : 
 ```
 Fair distribution of prizes:
-1. Victor Alvin:1000
-2. Wachira:900
-3. Purity:200,300
-4. Waweru:800
-5. James:700
-6. Grace Ndanu:600
-7. Joy Jerobon:500
-8. Stephanie:400,100
+1. Victor Alvin: 9000 (Total: 9000)
+2. Wachira: 2000 (Total: 2000)
+3. Purity: 1200 (Total: 1200)
+4. Waweru: 1005,100 (Total: 1105)
+5. James: 1000,120 (Total: 1120)
+6. Grace Ndanu: 800,300,50 (Total: 1150)
+7. Joy Jerobon: 600,320,120,60,40 (Total: 1140)
+8. Stephanie: 400,400,200,100 (Total: 1100)
 ```
 
 ## Tests Conducted
